@@ -5,6 +5,8 @@ import java.util.Scanner;
 import br.com.entra21.orientacao.objetos.principal.aula01.classes.Aluno;
 import br.com.entra21.orientacao.objetos.principal.aula01.classes.Professor;
 import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Diretor;
+import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Funcionario;
+import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Pessoa;
 
 public class Main {
 
@@ -22,11 +24,8 @@ public class Main {
             System.out.println("0 - Sair");
             System.out.println("1 - Aprender classes");
             System.out.println("2 - Aprender herança");
-
  
             opcao = input.nextByte();
-
- 
 
             switch (opcao) {
             case 0:
@@ -48,16 +47,29 @@ public class Main {
 
 	private static void  aprenderClassesObjetos() {
 		
+		Pessoa pessoal = new Pessoa();
+				
 		// aula 02 - Orientação a objetos, classes 
+		Funcionario funcionario1 = new Funcionario();
+		funcionario1.setIdade((byte)31);
+		funcionario1.setNome("Thiago");
+		funcionario1.setCargoAtual("Empreendedor");
+		funcionario1.setSalario(3000.00f);
+		
+		System.out.println("Oi meu nome é: "+funcionario1.getNome()+" e tenho "+funcionario1.getIdade()+" anos");
+		
+		Funcionario funcionario2 = new Funcionario("Thiago", (byte) 31, "63986488908", "programador jr", 2500.50f);
+				
 		Diretor direto1 = new Diretor();
 		direto1.realizarAprensentacao();
 		Diretor direto2 = new Diretor();
 		direto2.realizarAprensentacao();
-		Diretor direto3 = new Diretor("Paulo", (byte) 80);
+		Diretor direto3 = new Diretor("Paulo", (byte) 80, "00000000000");
+		direto3.setObservacao("Observação");
 		direto3.realizarAprensentacao();
 		
 		
-		
+		//aula 01
 		
 		// instanciando um objeto da classe Professor na variavel professorJava
 		Professor professorJava = new Professor();
