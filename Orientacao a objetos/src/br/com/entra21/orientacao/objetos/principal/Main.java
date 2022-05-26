@@ -7,6 +7,9 @@ import br.com.entra21.orientacao.objetos.principal.aula01.classes.Professor;
 import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Diretor;
 import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Funcionario;
 import br.com.entra21.orientacao.objetos.principal.aula02.heranca.Pessoa;
+import br.com.entra21.orientacao.objetos.principal.aula03.polimorfismo.Atleta;
+import br.com.entra21.orientacao.objetos.principal.aula03.polimorfismo.Nadador;
+import br.com.entra21.orientacao.objetos.principal.aula03.polimorfismo.Velocista;
 
 public class Main {
 
@@ -22,9 +25,10 @@ public class Main {
          do {
             System.out.println("Escolha uma opção");
             System.out.println("0 - Sair");
-            System.out.println("1 - Aprender classes");
-            System.out.println("2 - Aprender herança");
- 
+            System.out.println("1 - Aprender Classes");
+            System.out.println("2 - Aprender Herança");
+            System.out.println("3 - Aprender Polimorfismo");
+            
             opcao = input.nextByte();
 
             switch (opcao) {
@@ -37,6 +41,9 @@ public class Main {
             case 2:
                 aprenderHeranca();
                 break;
+            case 3:
+                aprenderPolimorfismo();
+                break;
             default:
                 System.out.println("Escolha uma opção válida");
                 break;
@@ -45,31 +52,10 @@ public class Main {
 
 	}
 
+	
 	private static void  aprenderClassesObjetos() {
 		
-		Pessoa pessoal = new Pessoa();
-				
-		// aula 02 - Orientação a objetos, classes 
-		Funcionario funcionario1 = new Funcionario();
-		funcionario1.setIdade((byte)31);
-		funcionario1.setNome("Thiago");
-		funcionario1.setCargoAtual("Empreendedor");
-		funcionario1.setSalario(3000.00f);
-		
-		System.out.println("Oi meu nome é: "+funcionario1.getNome()+" e tenho "+funcionario1.getIdade()+" anos");
-		
-		Funcionario funcionario2 = new Funcionario("Thiago", (byte) 31, "63986488908", "programador jr", 2500.50f);
-				
-		Diretor direto1 = new Diretor();
-		direto1.realizarAprensentacao();
-		Diretor direto2 = new Diretor();
-		direto2.realizarAprensentacao();
-		Diretor direto3 = new Diretor("Paulo", (byte) 80, "00000000000");
-		direto3.setObservacao("Observação");
-		direto3.realizarAprensentacao();
-		
-		
-		//aula 01
+		//aula 01 POO
 		
 		// instanciando um objeto da classe Professor na variavel professorJava
 		Professor professorJava = new Professor();
@@ -130,8 +116,65 @@ public class Main {
 	}
 
 	private static void aprenderHeranca() {
-		 
-		
-
+		// aula 02 - Orientação a objetos, classes 
+				Funcionario funcionario1 = new Funcionario();
+				funcionario1.setIdade((byte)31);
+				funcionario1.setNome("Thiago");
+				funcionario1.setCargoAtual("Empreendedor");
+				funcionario1.setSalario(3000.00f);
+				
+				System.out.println("Oi meu nome é: "+funcionario1.getNome()+" e tenho "+funcionario1.getIdade()+" anos");
+				
+				Funcionario funcionario2 = new Funcionario("Thiago", (byte) 31, "63986488908", "programador jr", 2500.50f);
+						
+				Diretor direto1 = new Diretor();
+				direto1.realizarAprensentacao();
+				Diretor direto2 = new Diretor();
+				direto2.realizarAprensentacao();
+				Diretor direto3 = new Diretor("Paulo", (byte) 80, "00000000000");
+				direto3.setObservacao("Observação");
+				direto3.realizarAprensentacao();
 	}
+
+	private static void aprenderPolimorfismo() {
+		
+		//padrão de polimorfismo para comportamentos é herdar
+		//a segunda forma do polimorfismo [e fazer completamente os comportamentos(métodos) do meu jeito, o que eu herdei
+		//a terceira forma do polimorfismo é aproveitar minha herança e fazer o direncial
+				 
+		
+		System.out.println("-----------------------------------------------------------");
+		Atleta cr7 = new Atleta ();
+		cr7.setNome("Cristiano");
+		cr7.comemorarVitoria();
+		cr7.aprenderComDerrota();
+		
+		
+		System.out.println("-----------------------------------------------------------");
+		Nadador michaelPhelps = new Nadador("Michael", (byte)31, 1, 2, "Mar","Nadadeira");
+		System.out.println("Quer escrever uma frase?");
+		String frase = input.nextLine();
+		michaelPhelps.comemorarVitoria(frase); //procura primeiro na minha classe Nadador, se não tiver busca na herança.
+		michaelPhelps.comemorarVitoria();
+		michaelPhelps.aprenderComDerrota();
+		michaelPhelps.setNome("Phelps - Homem Peixe");
+		
+		System.out.println("-----------------------------------------------------------");
+		Nadador sergio = new Nadador("Sergio Tainha", (byte)30, 3, 5, "Piscina", "Oculos");
+		sergio.comemorarVitoria();
+				
+		Velocista flash = new Velocista();
+		flash.setMarcaCalcado("Adidas");
+		flash.setNome("Byke Alien ;)");
+		System.out.println("-----------------------------------------------------------");
+		flash.comemorarVitoria();
+		flash.aprenderComDerrota();
+		System.out.println("-----------------------------------------------------------");
+	}
+		
+		
+		
+			
+		
+	
 }
