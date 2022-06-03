@@ -18,6 +18,7 @@ import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Capivara;
 import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Gato;
 import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Humano;
 import br.com.entra21.orientacao.objetos.principal.aula04.interfaces.Planta;
+import br.com.entra21.orientacao.objetos.principal.aula05.revisao.Revisao;
 
 public class Main {
 
@@ -63,6 +64,9 @@ public class Main {
             case 5:
                 aprenderPolimorfismoInterface();
                 break;
+            case 6:
+                revisarPOO();
+            	break;
                 
             default:
                 System.out.println("Escolha uma opção válida");
@@ -73,6 +77,7 @@ public class Main {
 	}
 
 	
+
 	private static void  aprenderClassesObjetos() {
 		
 		//aula 01 POO
@@ -248,5 +253,9 @@ public class Main {
 		
 	}		
 		
+	private static void revisarPOO() {
+		Revisao.revisar();
+		
+	}
 	
 }
