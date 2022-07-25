@@ -1,6 +1,6 @@
 # Entra21_Programação_Orientada_Objeto(POO)
 
-![Gif Entra21](/git/entra21.gif)
+![Gif Entra21](/gif/entra21.gif)
 
 ## Repositório com as práticas realizadas em aula  
 
@@ -11,7 +11,7 @@
 > - Documentação
 
 
-<a href="#"><img align="center" src="git/img01.gif" width="450 " height="300" /></a>
+<a href="#"><img align="center" src="gif/img01.gif" width="450 " height="300" /></a>
 
 | AULA | ASSUNTO |
 |------|---------|
